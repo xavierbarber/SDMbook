@@ -1,0 +1,88 @@
+
+\pagebreak 
+\setcounter{chapter}{5}
+\setcounter{section}{0}
+\renewcommand{\thepage}{\arabic{page}}
+
+# Spatial SDM: areal & geostatistical  (Antonio y Maria)
+
+Vale, y aquí Antonio nos dara una lección magistral de Geoestadística y Areal Data... no sé si algo de patrones puntuales y nos pondrá ejemplos de código \R para que los lectores puedan hacer sus primeras predicciones o su primer modelo de BYM... 
+
+
+¿cómo lo veis Antonio y María?
+
+## Navigating the Spatial Landscape in Species Distribution Models 
+
+
+
+Spatial structure – a fundamental component in understanding species distributions. In ecology, it's long been acknowledged that observations in close proximity tend to be more similar than those farther apart, a concept encapsulated by Tobler's First Law of Geography. Embracing this spatial dependence is crucial, especially when modeling species distributions, as overlooking it can lead to erroneous conclusions.
+
+In this chapter titled "Spatial (areal & geostatistical)", we dive deep into the intricacies of areal and geostatistical data and their role in Species Distribution Models (SDMs). While areal data deals with aggregate information over spatial units (like polygons or regions), geostatistical data handles continuous variation across space, often relying on point-referenced data. Each has its unique challenges and opportunities when integrated into SDMs.
+
+R-INLA, or Integrated Nested Laplace Approximations in R, emerges as a powerful tool in this spatial realm. Not only does it provide a robust framework for hierarchical modeling, but its capabilities in handling spatial structures – both areal and geostatistical – are unparalleled.
+
+Throughout this chapter, we'll explore the theoretical underpinnings of spatial data, understand their implications in SDMs, and master the techniques to effectively harness them using R-INLA. Step-by-step examples, real-world applications, and insightful visualizations will guide our journey, ensuring a comprehensive grasp of these spatial nuances.
+
+As we chart this spatial course, our goal is to equip readers with the knowledge and skills to construct more accurate, refined, and ecologically meaningful species distribution models. So, let's embark on this spatial exploration, where the synergy of space, species, and sophisticated modeling techniques unveils the patterns of life.
+
+
+## Geostatistical Species Distribution Model with R-INLA
+
+
+## Install & Load Necessary Packages
+
+```{r setup, include=FALSE}
+#install.packages("INLA", repos="https://inla.r-inla-download.org/R/stable")
+library(INLA)
+library(sp)
+```
+
+### Generate Hypothetical Data
+
+
+```{r eval=F}
+ # Create a spatial grid
+grid <- expand.grid(x=seq(0, 10, length=20), y=seq(0, 10, length=20) )
+coordinates(grid) <- ~x+y
+x=seq(0, 10, length=20)
+y=seq(0, 10, length=20)
+# Simulate some environmental predictor
+grid$env1 <- with(grid, sin(x)*cos(y))
+
+# Simulate presence-absence data with some spatial structure
+set.seed(123)
+grid$presence <- rbinom(nrow(grid), 1, plogis(-2 + 0.5*grid$env1 + 
+                   with(grid, rnorm(n=nrow(grid), mean=0, sd=0.5))))
+
+```
+
+### Fit a Geostatistical Model Using R-INLA
+
+
+```{r eval=F}
+# Define the formula
+formula <- presence ~ 1 + env1 + f(x, y, model="matern", scale.model="range")
+
+# Fit the model
+result <- inla(formula, data=grid, family="binomial", control.predictor=list(compute=TRUE))
+
+```
+
+### Plot the Results
+
+```{r eval=F}
+# Plot the observed presences
+spplot(grid, "presence", main="Observed Presence", col.regions=c("white", "red"), at=c(-0.5, 0.5, 1.5))
+
+# Plot the predicted probabilities
+pred.grid <- grid
+pred.grid$predicted <- result$summary.fitted.values$mean[1:nrow(grid)]
+spplot(pred.grid, "predicted", main="Predicted Presence Probability", col.regions=colorRampPalette(c("white", "red"))(100), at=seq(0, 1, by=0.01))
+
+# Plot the spatial random effect (this captures the spatial structure not explained by the environmental predictor)
+spatial.effect <- result$summary.random$f.x[, "mean"]
+matrix.effect <- matrix(spatial.effect, nrow=sqrt(length(spatial.effect)), ncol=sqrt(length(spatial.effect)))
+image(matrix.effect, main="Spatial Effect", xaxt="n", yaxt="n", col=colorRampPalette(c("blue", "white", "red"))(100))
+
+```
+

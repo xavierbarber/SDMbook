@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 14 Other issues (downscaling, spatial confounding, multiple likelihoods, big data and mapping the world) (Xavi, Antonio y artistas invitados) | Species-Distribution-Models</title>
+  <meta name="description" content="Modelling Species Distribution book CRCPress" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 14 Other issues (downscaling, spatial confounding, multiple likelihoods, big data and mapping the world) (Xavi, Antonio y artistas invitados) | Species-Distribution-Models" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Modelling Species Distribution book CRCPress" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 14 Other issues (downscaling, spatial confounding, multiple likelihoods, big data and mapping the world) (Xavi, Antonio y artistas invitados) | Species-Distribution-Models" />
+  
+  <meta name="twitter:description" content="Modelling Species Distribution book CRCPress" />
+  
+
+<meta name="author" content="Barber, Conesa, Gomez-Rubio, Lopez-Quilez, Martinez-Minaya, Paradinas, Pennino" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="multiple-sources-of-information-dependent-independent-data-and-more-xavi.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Species Distribution Models with R-INLA and INLABRU</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="species-distribution-models-a-recent-history-maría.html"><a href="species-distribution-models-a-recent-history-maría.html"><i class="fa fa-check"></i><b>1</b> Species Distribution Models: a recent history (María)</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="species-distribution-models-a-recent-history-maría.html"><a href="species-distribution-models-a-recent-history-maría.html#the-unavoidable-globalization-of-knowledge"><i class="fa fa-check"></i><b>1.1</b> The Unavoidable Globalization of Knowledge</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="bayesian-inference-integrated-nested-laplace-approximation-variational-bayes.-virgilio.html"><a href="bayesian-inference-integrated-nested-laplace-approximation-variational-bayes.-virgilio.html"><i class="fa fa-check"></i><b>2</b> Bayesian Inference: Integrated Nested Laplace Approximation &amp; Variational Bayes. (Virgilio)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="bayesian-inference-integrated-nested-laplace-approximation-variational-bayes.-virgilio.html"><a href="bayesian-inference-integrated-nested-laplace-approximation-variational-bayes.-virgilio.html#introduction-navigating-the-bayesian-landscape"><i class="fa fa-check"></i><b>2.1</b> Introduction: Navigating the Bayesian Landscape</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sdm-with-glm-and-gam-covariates-maría-y-david.html"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html"><i class="fa fa-check"></i><b>3</b> SDM with GLM and GAM (covariates) (María y David)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sdm-with-glm-and-gam-covariates-maría-y-david.html"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#charting-the-ecological-landscape-with-glm-and-gam"><i class="fa fa-check"></i><b>3.1</b> Charting the Ecological Landscape with GLM and GAM</a></li>
+<li class="chapter" data-level="3.2" data-path="sdm-with-glm-and-gam-covariates-maría-y-david.html"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#glm"><i class="fa fa-check"></i><b>3.2</b> GLM</a></li>
+<li class="chapter" data-level="3.3" data-path="sdm-with-glm-and-gam-covariates-maría-y-david.html"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#gam"><i class="fa fa-check"></i><b>3.3</b> GAM</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="spatial-data-data-type-and-maps-virgilio.html"><a href="spatial-data-data-type-and-maps-virgilio.html"><i class="fa fa-check"></i><b>4</b> Spatial Data (data type and Maps) (Virgilio)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="spatial-data-data-type-and-maps-virgilio.html"><a href="spatial-data-data-type-and-maps-virgilio.html#mapping-the-confluence-of-spatial-data-and-species-distributions"><i class="fa fa-check"></i><b>4.1</b> Mapping the Confluence of Spatial Data and Species Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><a href="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><i class="fa fa-check"></i><b>5</b> Spatial (areal &amp; geostatistical) SDM (Antonio y Maria)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><a href="spatial-areal-geostatistical-sdm-antonio-y-maria.html#navigating-the-spatial-landscape-in-species-distribution-models"><i class="fa fa-check"></i><b>5.1</b> Navigating the Spatial Landscape in Species Distribution Models</a></li>
+<li class="chapter" data-level="5.2" data-path="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><a href="spatial-areal-geostatistical-sdm-antonio-y-maria.html#geostatistical-species-distribution-model-with-r-inla"><i class="fa fa-check"></i><b>5.2</b> Geostatistical Species Distribution Model with R-INLA</a></li>
+<li class="chapter" data-level="5.3" data-path="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><a href="spatial-areal-geostatistical-sdm-antonio-y-maria.html#install-load-necessary-packages"><i class="fa fa-check"></i><b>5.3</b> Install &amp; Load Necessary Packages</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><a href="spatial-areal-geostatistical-sdm-antonio-y-maria.html#generate-hypothetical-data"><i class="fa fa-check"></i><b>5.3.1</b> Generate Hypothetical Data</a></li>
+<li class="chapter" data-level="5.3.2" data-path="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><a href="spatial-areal-geostatistical-sdm-antonio-y-maria.html#fit-a-geostatistical-model-using-r-inla"><i class="fa fa-check"></i><b>5.3.2</b> Fit a Geostatistical Model Using R-INLA</a></li>
+<li class="chapter" data-level="5.3.3" data-path="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><a href="spatial-areal-geostatistical-sdm-antonio-y-maria.html#plot-the-results"><i class="fa fa-check"></i><b>5.3.3</b> Plot the Results</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="preferential-sampling-in-the-context-of-sdm-david.html"><a href="preferential-sampling-in-the-context-of-sdm-david.html"><i class="fa fa-check"></i><b>6</b> Preferential Sampling in the context of SDM (David)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="preferential-sampling-in-the-context-of-sdm-david.html"><a href="preferential-sampling-in-the-context-of-sdm-david.html#unraveling-the-intricacies-of-preferential-sampling-in-species-distribution-models"><i class="fa fa-check"></i><b>6.1</b> Unraveling the Intricacies of Preferential Sampling in Species Distribution Models</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="excess-of-zeroes-in-the-context-of-sdm-joaquin.html"><a href="excess-of-zeroes-in-the-context-of-sdm-joaquin.html"><i class="fa fa-check"></i><b>7</b> Excess of zeroes in the context of SDM (Joaquin)</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="excess-of-zeroes-in-the-context-of-sdm-joaquin.html"><a href="excess-of-zeroes-in-the-context-of-sdm-joaquin.html#navigating-the-zeroes---challenges-and-opportunities-in-species-distribution-models"><i class="fa fa-check"></i><b>7.1</b> Navigating the Zeroes - Challenges and Opportunities in Species Distribution Models</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="barriers-and-non-stationarity-models-davidjoaquin.html"><a href="barriers-and-non-stationarity-models-davidjoaquin.html"><i class="fa fa-check"></i><b>8</b> Barriers and non-stationarity models (David/Joaquin)</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="barriers-and-non-stationarity-models-davidjoaquin.html"><a href="barriers-and-non-stationarity-models-davidjoaquin.html#beyond-uniformity-embracing-barriers-and-non-stationarity-in-sdms"><i class="fa fa-check"></i><b>8.1</b> Beyond Uniformity – Embracing Barriers and Non-Stationarity in SDMs</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="misalignment-data-xavi.html"><a href="misalignment-data-xavi.html"><i class="fa fa-check"></i><b>9</b> Misalignment Data (Xavi)</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="misalignment-data-xavi.html"><a href="misalignment-data-xavi.html#the-challenge-of-misalignment---navigating-data-inconsistencies-in-sdms"><i class="fa fa-check"></i><b>9.1</b> The Challenge of Misalignment - Navigating Data Inconsistencies in SDMs</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="presence-only-inlabru-xaviiosu.html"><a href="presence-only-inlabru-xaviiosu.html"><i class="fa fa-check"></i><b>10</b> Presence-only (INLABRU) (Xavi|Iosu)</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="presence-only-inlabru-xaviiosu.html"><a href="presence-only-inlabru-xaviiosu.html#unraveling-the-enigma-of-presence-only-data-with-inlabru"><i class="fa fa-check"></i><b>10.1</b> Unraveling the Enigma of Presence-Only Data with INLABRU</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="spatio-temporal-species-distribution-iosu.html"><a href="spatio-temporal-species-distribution-iosu.html"><i class="fa fa-check"></i><b>11</b> Spatio-temporal species distribution (Iosu)</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="spatio-temporal-species-distribution-iosu.html"><a href="spatio-temporal-species-distribution-iosu.html#navigating-the-dynamic-tapestry-of-spatio-temporal-species-distribution"><i class="fa fa-check"></i><b>11.1</b> Navigating the Dynamic Tapestry of Spatio-temporal Species Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="joint-species-distribution-models-xavi.html"><a href="joint-species-distribution-models-xavi.html"><i class="fa fa-check"></i><b>12</b> Joint Species Distribution models (Xavi)</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="joint-species-distribution-models-xavi.html"><a href="joint-species-distribution-models-xavi.html#synergy-in-nature---delving-into-joint-species-distribution-models"><i class="fa fa-check"></i><b>12.1</b> Synergy in Nature - Delving into Joint Species Distribution Models</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="multiple-sources-of-information-dependent-independent-data-and-more-xavi.html"><a href="multiple-sources-of-information-dependent-independent-data-and-more-xavi.html"><i class="fa fa-check"></i><b>13</b> Multiple sources of information (dependent-independent data and more) (Xavi)</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="multiple-sources-of-information-dependent-independent-data-and-more-xavi.html"><a href="multiple-sources-of-information-dependent-independent-data-and-more-xavi.html#confluence-of-data-streams---harnessing-multiple-sources-of-information-in-sdms"><i class="fa fa-check"></i><b>13.1</b> Confluence of Data Streams - Harnessing Multiple Sources of Information in SDMs</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="other-issues-downscaling-spatial-confounding-multiple-likelihoods-big-data-and-mapping-the-world-xavi-antonio-y-artistas-invitados.html"><a href="other-issues-downscaling-spatial-confounding-multiple-likelihoods-big-data-and-mapping-the-world-xavi-antonio-y-artistas-invitados.html"><i class="fa fa-check"></i><b>14</b> Other issues (downscaling, spatial confounding, multiple likelihoods, big data and mapping the world) (Xavi, Antonio y artistas invitados)</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="other-issues-downscaling-spatial-confounding-multiple-likelihoods-big-data-and-mapping-the-world-xavi-antonio-y-artistas-invitados.html"><a href="other-issues-downscaling-spatial-confounding-multiple-likelihoods-big-data-and-mapping-the-world-xavi-antonio-y-artistas-invitados.html#navigating-the-multifaceted-landscape-of-advanced-sdms"><i class="fa fa-check"></i><b>14.1</b> Navigating the Multifaceted Landscape of Advanced SDMs</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><div class="line-block">Modelling Species Distribution<br />
+with R-INLA (and INLABRU?)<br />
+</div></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="other-issues-downscaling-spatial-confounding-multiple-likelihoods-big-data-and-mapping-the-world-xavi-antonio-y-artistas-invitados" class="section level1 hasAnchor" number="14">
+<h1><span class="header-section-number">Chapter 14</span> Other issues (downscaling, spatial confounding, multiple likelihoods, big data and mapping the world) (Xavi, Antonio y artistas invitados)<a href="other-issues-downscaling-spatial-confounding-multiple-likelihoods-big-data-and-mapping-the-world-xavi-antonio-y-artistas-invitados.html#other-issues-downscaling-spatial-confounding-multiple-likelihoods-big-data-and-mapping-the-world-xavi-antonio-y-artistas-invitados" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Pues la verdad es que no sé aquí que pondremos… supongo que las “open questions”… a ver que tal sale … o si llegamos desfondados a este capítulo.</p>
+<div id="navigating-the-multifaceted-landscape-of-advanced-sdms" class="section level2 hasAnchor" number="14.1">
+<h2><span class="header-section-number">14.1</span> Navigating the Multifaceted Landscape of Advanced SDMs<a href="other-issues-downscaling-spatial-confounding-multiple-likelihoods-big-data-and-mapping-the-world-xavi-antonio-y-artistas-invitados.html#navigating-the-multifaceted-landscape-of-advanced-sdms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The journey of understanding species distributions is rife with complexities, not merely in the ecological phenomena they depict, but in the analytical intricacies we encounter. Beyond the foundational principles and standard methodologies, a plethora of nuanced issues await the discerning modeler – challenges that, when addressed, can significantly elevate the depth, accuracy, and utility of Species Distribution Models (SDMs).</p>
+<p>In this chapter, <strong>Other Issues (downscaling, spatial confounding, multiple likelihoods, big data and mapping the world)</strong>, we step off the beaten path to explore these often-underappreciated yet crucial facets of SDM. Each of these issues, whether it’s the art of downscaling, the challenge of spatial confounding, the intricacies of handling multiple likelihoods, the enormity of big data, or the ambitious endeavor of mapping the world, represents a unique puzzle demanding tailored solutions.</p>
+<p>Harnessing the unparalleled capabilities of R-INLA and INLABRU, we embark on this intricate journey. These powerful tools, with their adaptability and depth, are primed to tackle these challenges head-on, turning potential roadblocks into opportunities for enriched insights.</p>
+<p>Guided by a blend of theory, practical exercises, and illustrative examples, we will:</p>
+<ul>
+<li><strong>Delve into the subtleties of downscaling</strong>, understanding its necessity and methodologies in the context of SDMs.</li>
+<li><strong>Unravel the complexities of spatial confounding</strong>, ensuring our models remain robust and ecologically meaningful.</li>
+<li><strong>Explore the world of multiple likelihoods</strong>, optimizing our models for diverse data sources and ecological realities.</li>
+<li><strong>Grapple with big data</strong>, leveraging its vastness without drowning in its depth.</li>
+<li>And, with ambition in our hearts, <strong>explore the potential and challenges of mapping the world</strong>, providing holistic, global insights into species distributions.</li>
+</ul>
+<p>Beyond the techniques and tools, we’ll keep an ever-watchful eye on the ecological and conservation implications of our endeavors, ensuring our models remain grounded in their ultimate purpose – understanding, preserving, and coexisting with the myriad species that share our planet.</p>
+<p>Embark with us on this advanced expedition through the multi-dimensional world of SDMs, harnessing the combined prowess of R-INLA and INLABRU to navigate and illuminate these intricate terrains.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="multiple-sources-of-information-dependent-independent-data-and-more-xavi.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/chapter14.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Species Distribution Models.pdf", "Species Distribution Models.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

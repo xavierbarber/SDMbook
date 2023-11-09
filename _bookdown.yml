@@ -1,0 +1,17 @@
+book_filename: "Species Distribution Models"
+new_session: yes
+delete_merged_file: true
+language:
+  label:
+    fig: "Figure "
+    tab: "Table "
+  ui:
+    edit: "Edit"
+    chapter_name: "Chapter "
+rmd_files: ["index.Rmd", "Preface.Rmd", "chapter01.Rmd", "chapter02.Rmd", 
+            "chapter03.Rmd", "chapter04.Rmd", "chapter05.Rmd",
+            "chapter06.Rmd", "chapter07.Rmd",
+            "chapter08.Rmd", "chapter09.Rmd",
+            "chapter10.Rmd", "chapter11.Rmd",
+            "chapter12.Rmd", "chapter13.Rmd", "chapter14.Rmd"]
+

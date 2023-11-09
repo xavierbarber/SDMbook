@@ -1,0 +1,33 @@
+% you may need to leave a few empty pages before the dedication page
+
+%\cleardoublepage\newpage\thispagestyle{empty}\null
+%\cleardoublepage\newpage\thispagestyle{empty}\null
+%\cleardoublepage\newpage
+%\thispagestyle{empty}
+
+%\linespread{1.213}
+\linespread{1.4}
+
+\normalsize
+
+\textbf{RUBRICA Y LIMITACIÓN DE RESPONSABILIDAD}
+
+Este informe pericial ha sido preparado por el Prof. Dr. J.Xavier Barber Vallés, Profesor Titular de la Universidad Miguel Hernández de Elche al amparo del art. 83 de la LOMLOU.
+
+Este informe pericial ha sido preprado exclusivamente para los fines descritos en la introducción de este informe, por lo que no debe ser distribuido fuera del ámbido judicial en el que se enmarca según el acuerdo de confidencialidad firmado por ASEFA S.A. y el firmante.
+
+No se asume responsabilidad profesional alguna frente a personas distintas de los usuarios personados en la demanda de ACCIONA INMOBILIARIA S.L. contra ASEFA S.A.
+%\includegraphics{images/dedication.pdf}
+
+\vspace{5cm}
+
+\hspace{5cm} Firmado:
+
+\vspace{0.35cm}
+
+\hspace{7cm} J. Xavier Barber Vallés
+
+\hspace{7cm} 28996841M
+
+\setlength{\abovedisplayskip}{-5pt}
+\setlength{\abovedisplayshortskip}{-5pt}

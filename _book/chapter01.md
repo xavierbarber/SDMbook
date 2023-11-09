@@ -1,0 +1,27 @@
+
+\pagebreak 
+\setcounter{chapter}{1}
+\setcounter{section}{0}
+\setcounter{page}{0}
+\renewcommand{\thepage}{\arabic{page}}
+
+
+# Species Distribution Models: a recent history (María)
+
+Capítulo en el que María nos hará un repaso de los SDM y la necesidad de seguir avanzando por este camino
+
+## The Unavoidable Globalization of Knowledge  
+
+Biodiversity, that magical mosaic of life that unfolds before us at all scales and in every corner of the planet, has always been a subject of fascination and study. From the earliest naturalists who roamed forests and deserts, to the modern biologists using satellites and algorithms for their research, there has been an insatiable desire to understand how and why species distribute themselves in space and time.
+
+This is where the importance of Species Distribution Models (SDM) comes into play. These models aim not only to understand the current geographical distribution of species but also to predict how they might react and move in response to changes in the environment, such as climate change or habitat transformation due to human activities.
+
+The use of SDMs has increased over the past few decades due to the growing need to make informed decisions in areas like conservation, resource management, and territorial planning. The implications extend beyond the academic world; public policies, industries, and society at large benefit directly from the knowledge these models provide.
+
+So, if SDMs are such a powerful and necessary tool, why the insistence on communicating about them in English?
+
+The answer lies in the unavoidable globalization of knowledge. We live in a world where information flows faster than ever, and often, the lingua franca of science is English. By publishing and communicating findings in this language, a global reach is achieved, allowing scientists from all over the world to access, understand, critique, and build upon that foundation.
+
+However, this doesn't diminish the value of disseminating in other languages. In fact, it's essential to bring science closer to non-English speaking communities. But, to establish international and cooperative dialogue, the adoption of English becomes a crucial tool.
+
+In this book, we will not only delve into the theory and practice of SDMs but also address their global significance and how these models intertwine in an interconnected world. Thus, through the lens of English, we expand the boundaries of knowledge and strengthen international collaboration towards a common goal: understanding and preserving planetary biodiversity.

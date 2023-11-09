@@ -1,0 +1,118 @@
+
+\usepackage{color, colortbl}
+%\usepackage[font={bf,labelsep=colon,skip=10ptj},ustification=centering]{caption}
+%\usepackage{caption}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{float}
+\usepackage{units}
+%\usepackage[all,error]{onlyamsmath}
+%\usepackage{hyperref}
+\usepackage{longtable}
+
+%------------------------------------------------
+ 
+\PassOptionsToPackage{utf8}{inputenc} % latin9 (ISO-8859-9) = latin1+"Euro sign"
+\usepackage{inputenc}
+ 
+ %------------------------------------------------
+
+%\PassOptionsToPackage{ngerman,american}{babel}  % Change this to your language(s)
+% Spanish languages need extra options in order to work with this template
+\PassOptionsToPackage{spanish,es-lcroman,es-tabla}{babel}
+\usepackage{babel}
+%\usepackage[spanish]{babel}
+%------------------------------------------------			
+%Xavi
+%\renewcommand{\theequation}{\arabic{equation}}
+
+
+\usepackage{multicol}
+
+
+\newcommand{\hideFromPandoc}[1]{#1}
+ \hideFromPandoc{
+        \let\Begin\begin
+        \let\End\end
+      }
+      
+      
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[bf,singlelinecheck=off]{caption}
+
+\usepackage{framed,color}
+\definecolor{shadecolor}{RGB}{248,248,248}
+
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.8}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\floatpagefraction}{0.75}
+
+\renewenvironment{quote}{\begin{VF}}{\end{VF}}
+\let\oldhref\href
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+
+\newcommand{\M}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\R}{\textsl{R}}
+
+
+
+% \ifxetex
+  % \usepackage{letltxmacro}
+  % \setlength{\XeTeXLinkMargin}{1pt}
+  % \LetLtxMacro\SavedIncludeGraphics\includegraphics
+  % \def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
+    % \IncludeGraphicsAux{#1}%
+  % }%
+  % \newcommand*{\IncludeGraphicsAux}[2]{%
+    % \XeTeXLinkBox{%
+      % \SavedIncludeGraphics#1{#2}%
+    % }%
+  % }%
+% \fi
+
+\makeatletter
+\newenvironment{kframe}{%
+\medskip{}
+\setlength{\fboxsep}{.8em}
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+%modXavi
+%\renewenvironment{Shaded}{\begin{kframe}}{\end{kframe}}
+\makeatletter
+\@ifundefined{Shaded}{
+}{\renewenvironment{Shaded}{\begin{kframe}}{\end{kframe}}}
+\makeatother
+%FiModXavi
+
+
+\usepackage{makeidx}
+\makeindex
+
+\urlstyle{tt}
+
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+
+\frontmatter

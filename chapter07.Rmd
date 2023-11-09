@@ -1,0 +1,22 @@
+
+\pagebreak
+\setcounter{chapter}{7}
+\setcounter{section}{0}
+\renewcommand{\thepage}{\arabic{page}}
+
+
+# Excess of zeroes in the context of SDM  (Joaquin)
+
+Vale, aquí Joaquin nos va a presenta run chapter en el que se muestren los ZIP y los Hurdel ... ¿así te va bien Joaquín?
+
+## Navigating the Zeroes - Challenges and Opportunities in Species Distribution Models 
+
+In the intricate realm of Species Distribution Models (SDMs), data often speaks in whispers and shouts. Among the most vocal, yet perplexing aspects of this data, is the occurrence of zeroes. Far from being inconsequential, these zeroes – often representing absences or undetected presences – can dominate datasets and play a pivotal role in shaping our inferences about species distributions.
+
+"Excess of zeroes in the context of SDM" is not just a mathematical quirk but a biological and observational reality. It can arise due to various reasons: genuine absences, detection failures, or the patchy nature of many ecological phenomena. While zeroes can provide invaluable insights, an overabundance without proper handling can lead to misinterpreted models, undermining the reliability of predictions and conservation strategies derived from them.
+
+R-INLA, with its prowess in Bayesian modeling and its flexibility to incorporate complex data structures, emerges as a beacon in addressing this challenge. This chapter aims to elucidate the intricacies of datasets with an excess of zeroes and offers robust methodologies within the R-INLA framework to tackle them effectively.
+
+Through a blend of theory, real-world case studies, and hands-on R-INLA tutorials, we will explore various modeling approaches such as zero-inflated models and hurdle models. These techniques, tailored for datasets with a surfeit of zeroes, ensure that our SDMs are both statistically sound and ecologically meaningful.
+
+Join us in this deep dive into the world of zeroes, as we unravel their mysteries and harness their full potential in the quest to accurately model and understand the patterns of life on our planet.

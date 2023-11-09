@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 SDM with GLM and GAM (covariates) (María y David) | Species-Distribution-Models</title>
+  <meta name="description" content="Modelling Species Distribution book CRCPress" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 SDM with GLM and GAM (covariates) (María y David) | Species-Distribution-Models" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Modelling Species Distribution book CRCPress" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 SDM with GLM and GAM (covariates) (María y David) | Species-Distribution-Models" />
+  
+  <meta name="twitter:description" content="Modelling Species Distribution book CRCPress" />
+  
+
+<meta name="author" content="Barber, Conesa, Gomez-Rubio, Lopez-Quilez, Martinez-Minaya, Paradinas, Pennino" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="bayesian-inference-integrated-nested-laplace-approximation-variational-bayes.-virgilio.html"/>
+<link rel="next" href="spatial-data-data-type-and-maps-virgilio.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Species Distribution Models with R-INLA and INLABRU</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="species-distribution-models-a-recent-history-maría.html"><a href="species-distribution-models-a-recent-history-maría.html"><i class="fa fa-check"></i><b>1</b> Species Distribution Models: a recent history (María)</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="species-distribution-models-a-recent-history-maría.html"><a href="species-distribution-models-a-recent-history-maría.html#the-unavoidable-globalization-of-knowledge"><i class="fa fa-check"></i><b>1.1</b> The Unavoidable Globalization of Knowledge</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="bayesian-inference-integrated-nested-laplace-approximation-variational-bayes.-virgilio.html"><a href="bayesian-inference-integrated-nested-laplace-approximation-variational-bayes.-virgilio.html"><i class="fa fa-check"></i><b>2</b> Bayesian Inference: Integrated Nested Laplace Approximation &amp; Variational Bayes. (Virgilio)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="bayesian-inference-integrated-nested-laplace-approximation-variational-bayes.-virgilio.html"><a href="bayesian-inference-integrated-nested-laplace-approximation-variational-bayes.-virgilio.html#introduction-navigating-the-bayesian-landscape"><i class="fa fa-check"></i><b>2.1</b> Introduction: Navigating the Bayesian Landscape</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sdm-with-glm-and-gam-covariates-maría-y-david.html"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html"><i class="fa fa-check"></i><b>3</b> SDM with GLM and GAM (covariates) (María y David)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sdm-with-glm-and-gam-covariates-maría-y-david.html"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#charting-the-ecological-landscape-with-glm-and-gam"><i class="fa fa-check"></i><b>3.1</b> Charting the Ecological Landscape with GLM and GAM</a></li>
+<li class="chapter" data-level="3.2" data-path="sdm-with-glm-and-gam-covariates-maría-y-david.html"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#glm"><i class="fa fa-check"></i><b>3.2</b> GLM</a></li>
+<li class="chapter" data-level="3.3" data-path="sdm-with-glm-and-gam-covariates-maría-y-david.html"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#gam"><i class="fa fa-check"></i><b>3.3</b> GAM</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="spatial-data-data-type-and-maps-virgilio.html"><a href="spatial-data-data-type-and-maps-virgilio.html"><i class="fa fa-check"></i><b>4</b> Spatial Data (data type and Maps) (Virgilio)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="spatial-data-data-type-and-maps-virgilio.html"><a href="spatial-data-data-type-and-maps-virgilio.html#mapping-the-confluence-of-spatial-data-and-species-distributions"><i class="fa fa-check"></i><b>4.1</b> Mapping the Confluence of Spatial Data and Species Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><a href="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><i class="fa fa-check"></i><b>5</b> Spatial (areal &amp; geostatistical) SDM (Antonio y Maria)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><a href="spatial-areal-geostatistical-sdm-antonio-y-maria.html#navigating-the-spatial-landscape-in-species-distribution-models"><i class="fa fa-check"></i><b>5.1</b> Navigating the Spatial Landscape in Species Distribution Models</a></li>
+<li class="chapter" data-level="5.2" data-path="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><a href="spatial-areal-geostatistical-sdm-antonio-y-maria.html#geostatistical-species-distribution-model-with-r-inla"><i class="fa fa-check"></i><b>5.2</b> Geostatistical Species Distribution Model with R-INLA</a></li>
+<li class="chapter" data-level="5.3" data-path="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><a href="spatial-areal-geostatistical-sdm-antonio-y-maria.html#install-load-necessary-packages"><i class="fa fa-check"></i><b>5.3</b> Install &amp; Load Necessary Packages</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><a href="spatial-areal-geostatistical-sdm-antonio-y-maria.html#generate-hypothetical-data"><i class="fa fa-check"></i><b>5.3.1</b> Generate Hypothetical Data</a></li>
+<li class="chapter" data-level="5.3.2" data-path="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><a href="spatial-areal-geostatistical-sdm-antonio-y-maria.html#fit-a-geostatistical-model-using-r-inla"><i class="fa fa-check"></i><b>5.3.2</b> Fit a Geostatistical Model Using R-INLA</a></li>
+<li class="chapter" data-level="5.3.3" data-path="spatial-areal-geostatistical-sdm-antonio-y-maria.html"><a href="spatial-areal-geostatistical-sdm-antonio-y-maria.html#plot-the-results"><i class="fa fa-check"></i><b>5.3.3</b> Plot the Results</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="preferential-sampling-in-the-context-of-sdm-david.html"><a href="preferential-sampling-in-the-context-of-sdm-david.html"><i class="fa fa-check"></i><b>6</b> Preferential Sampling in the context of SDM (David)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="preferential-sampling-in-the-context-of-sdm-david.html"><a href="preferential-sampling-in-the-context-of-sdm-david.html#unraveling-the-intricacies-of-preferential-sampling-in-species-distribution-models"><i class="fa fa-check"></i><b>6.1</b> Unraveling the Intricacies of Preferential Sampling in Species Distribution Models</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="excess-of-zeroes-in-the-context-of-sdm-joaquin.html"><a href="excess-of-zeroes-in-the-context-of-sdm-joaquin.html"><i class="fa fa-check"></i><b>7</b> Excess of zeroes in the context of SDM (Joaquin)</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="excess-of-zeroes-in-the-context-of-sdm-joaquin.html"><a href="excess-of-zeroes-in-the-context-of-sdm-joaquin.html#navigating-the-zeroes---challenges-and-opportunities-in-species-distribution-models"><i class="fa fa-check"></i><b>7.1</b> Navigating the Zeroes - Challenges and Opportunities in Species Distribution Models</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="barriers-and-non-stationarity-models-davidjoaquin.html"><a href="barriers-and-non-stationarity-models-davidjoaquin.html"><i class="fa fa-check"></i><b>8</b> Barriers and non-stationarity models (David/Joaquin)</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="barriers-and-non-stationarity-models-davidjoaquin.html"><a href="barriers-and-non-stationarity-models-davidjoaquin.html#beyond-uniformity-embracing-barriers-and-non-stationarity-in-sdms"><i class="fa fa-check"></i><b>8.1</b> Beyond Uniformity – Embracing Barriers and Non-Stationarity in SDMs</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="misalignment-data-xavi.html"><a href="misalignment-data-xavi.html"><i class="fa fa-check"></i><b>9</b> Misalignment Data (Xavi)</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="misalignment-data-xavi.html"><a href="misalignment-data-xavi.html#the-challenge-of-misalignment---navigating-data-inconsistencies-in-sdms"><i class="fa fa-check"></i><b>9.1</b> The Challenge of Misalignment - Navigating Data Inconsistencies in SDMs</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="presence-only-inlabru-xaviiosu.html"><a href="presence-only-inlabru-xaviiosu.html"><i class="fa fa-check"></i><b>10</b> Presence-only (INLABRU) (Xavi|Iosu)</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="presence-only-inlabru-xaviiosu.html"><a href="presence-only-inlabru-xaviiosu.html#unraveling-the-enigma-of-presence-only-data-with-inlabru"><i class="fa fa-check"></i><b>10.1</b> Unraveling the Enigma of Presence-Only Data with INLABRU</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="spatio-temporal-species-distribution-iosu.html"><a href="spatio-temporal-species-distribution-iosu.html"><i class="fa fa-check"></i><b>11</b> Spatio-temporal species distribution (Iosu)</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="spatio-temporal-species-distribution-iosu.html"><a href="spatio-temporal-species-distribution-iosu.html#navigating-the-dynamic-tapestry-of-spatio-temporal-species-distribution"><i class="fa fa-check"></i><b>11.1</b> Navigating the Dynamic Tapestry of Spatio-temporal Species Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="joint-species-distribution-models-xavi.html"><a href="joint-species-distribution-models-xavi.html"><i class="fa fa-check"></i><b>12</b> Joint Species Distribution models (Xavi)</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="joint-species-distribution-models-xavi.html"><a href="joint-species-distribution-models-xavi.html#synergy-in-nature---delving-into-joint-species-distribution-models"><i class="fa fa-check"></i><b>12.1</b> Synergy in Nature - Delving into Joint Species Distribution Models</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="multiple-sources-of-information-dependent-independent-data-and-more-xavi.html"><a href="multiple-sources-of-information-dependent-independent-data-and-more-xavi.html"><i class="fa fa-check"></i><b>13</b> Multiple sources of information (dependent-independent data and more) (Xavi)</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="multiple-sources-of-information-dependent-independent-data-and-more-xavi.html"><a href="multiple-sources-of-information-dependent-independent-data-and-more-xavi.html#confluence-of-data-streams---harnessing-multiple-sources-of-information-in-sdms"><i class="fa fa-check"></i><b>13.1</b> Confluence of Data Streams - Harnessing Multiple Sources of Information in SDMs</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="other-issues-downscaling-spatial-confounding-multiple-likelihoods-big-data-and-mapping-the-world-xavi-y-artistas-invitados.html"><a href="other-issues-downscaling-spatial-confounding-multiple-likelihoods-big-data-and-mapping-the-world-xavi-y-artistas-invitados.html"><i class="fa fa-check"></i><b>14</b> Other issues (downscaling, spatial confounding, multiple likelihoods, big data and mapping the world) (Xavi y artistas invitados)</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="other-issues-downscaling-spatial-confounding-multiple-likelihoods-big-data-and-mapping-the-world-xavi-y-artistas-invitados.html"><a href="other-issues-downscaling-spatial-confounding-multiple-likelihoods-big-data-and-mapping-the-world-xavi-y-artistas-invitados.html#navigating-the-multifaceted-landscape-of-advanced-sdms"><i class="fa fa-check"></i><b>14.1</b> Navigating the Multifaceted Landscape of Advanced SDMs</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><div class="line-block">Modelling Species Distribution<br />
+with R-INLA (and INLABRU?)<br />
+</div></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sdm-with-glm-and-gam-covariates-maría-y-david" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> SDM with GLM and GAM (covariates) (María y David)<a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#sdm-with-glm-and-gam-covariates-maría-y-david" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Aquí David utilizará su amplio material de sus cursos para crear un capítulo donde haga una introducción a los GLM y GAM en el ámbito de los SDM e INLA.</p>
+<div id="charting-the-ecological-landscape-with-glm-and-gam" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Charting the Ecological Landscape with GLM and GAM<a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#charting-the-ecological-landscape-with-glm-and-gam" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Species Distribution Models (SDMs) have long been a cornerstone in ecological research, conservation planning, and environmental decision-making. These models, which aim to correlate the occurrence or abundance of species with environmental predictors, are essential tools for forecasting how species might respond to environmental changes, be they natural shifts or anthropogenic impacts.</p>
+<p>Within the broad spectrum of available modeling techniques, Generalized Linear Models (GLM) and Generalized Additive Models (GAM) stand out as both foundational and transformative. While GLM extends the familiar linear regression to accommodate non-normally distributed response data, GAM further generalizes the relationship between predictors and responses by allowing for non-linearities via smooth functions. These characteristics make them particularly suited for capturing the complexities inherent in ecological datasets.</p>
+<p>However, with their strengths come intricacies in interpretation, model selection, and diagnostics. Striking a balance between model complexity and ecological interpretability is an art as much as it is a science.</p>
+<p>This book is conceived as a comprehensive guide to understanding and applying GLM and GAM in the context of SDMs. We will navigate through the theoretical underpinnings of these models, their implementation, and the challenges and solutions associated with their use. Real-world examples and case studies will illuminate the path, ensuring that the reader not only grasps the mathematical nuances but also appreciates their practical implications.</p>
+<p>Embark with us on this exploration of the confluence of statistics and ecology, where GLM and GAM become powerful lenses through which we can better understand the distribution of life on our planet.</p>
+</div>
+<div id="glm" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> GLM<a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#glm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-1" tabindex="-1"></a><span class="co"># Load required libraries</span></span>
+<span id="cb1-2"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-2" tabindex="-1"></a><span class="co">#install.packages(&quot;stats&quot;)</span></span>
+<span id="cb1-3"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-3" tabindex="-1"></a><span class="fu">library</span>(stats)</span>
+<span id="cb1-4"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-5" tabindex="-1"></a><span class="co"># Generate a hypothetical dataset</span></span>
+<span id="cb1-6"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-6" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-7"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-7" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb1-8"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-8" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-9"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-9" tabindex="-1"></a>  <span class="at">presence =</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.5</span>),</span>
+<span id="cb1-10"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-10" tabindex="-1"></a>  <span class="at">env1 =</span> <span class="fu">rnorm</span>(n),</span>
+<span id="cb1-11"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-11" tabindex="-1"></a>  <span class="at">env2 =</span> <span class="fu">rnorm</span>(n)</span>
+<span id="cb1-12"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-12" tabindex="-1"></a>)</span>
+<span id="cb1-13"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-13" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-14" tabindex="-1"></a><span class="co"># Fit a GLM</span></span>
+<span id="cb1-15"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-15" tabindex="-1"></a>glm_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(presence <span class="sc">~</span> env1 <span class="sc">+</span> env2, <span class="at">data=</span>data, <span class="at">family=</span><span class="st">&quot;binomial&quot;</span>)</span>
+<span id="cb1-16"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-16" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-17" tabindex="-1"></a><span class="co"># Summary of the GLM</span></span>
+<span id="cb1-18"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb1-18" tabindex="-1"></a><span class="fu">summary</span>(glm_model)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = presence ~ env1 + env2, family = &quot;binomial&quot;, data = data)
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(&gt;|z|)  
+## (Intercept)  -0.1426     0.2040  -0.699   0.4845  
+## env1         -0.3646     0.2186  -1.668   0.0954 .
+## env2         -0.0719     0.2189  -0.328   0.7426  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 138.27  on 99  degrees of freedom
+## Residual deviance: 135.34  on 97  degrees of freedom
+## AIC: 141.34
+## 
+## Number of Fisher Scoring iterations: 4</code></pre>
+</div>
+<div id="gam" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> GAM<a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#gam" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb3-1" tabindex="-1"></a><span class="co"># Load required libraries</span></span>
+<span id="cb3-2"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb3-2" tabindex="-1"></a><span class="co">#install.packages(&quot;mgcv&quot;)</span></span>
+<span id="cb3-3"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb3-3" tabindex="-1"></a><span class="fu">library</span>(mgcv)</span></code></pre></div>
+<pre><code>## Loading required package: nlme</code></pre>
+<pre><code>## This is mgcv 1.8-42. For overview type &#39;help(&quot;mgcv-package&quot;)&#39;.</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb6-1" tabindex="-1"></a><span class="co"># Generate a hypothetical dataset (same as before)</span></span>
+<span id="cb6-2"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb6-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb6-3"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb6-3" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb6-4"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb6-4" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-5"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb6-5" tabindex="-1"></a>  <span class="at">presence =</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.5</span>),</span>
+<span id="cb6-6"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb6-6" tabindex="-1"></a>  <span class="at">env1 =</span> <span class="fu">rnorm</span>(n),</span>
+<span id="cb6-7"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb6-7" tabindex="-1"></a>  <span class="at">env2 =</span> <span class="fu">rnorm</span>(n)</span>
+<span id="cb6-8"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb6-8" tabindex="-1"></a>)</span>
+<span id="cb6-9"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb6-9" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb6-10" tabindex="-1"></a><span class="co"># Fit a GAM</span></span>
+<span id="cb6-11"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb6-11" tabindex="-1"></a>gam_model <span class="ot">&lt;-</span> <span class="fu">gam</span>(presence <span class="sc">~</span> <span class="fu">s</span>(env1) <span class="sc">+</span> <span class="fu">s</span>(env2), <span class="at">data=</span>data, <span class="at">family=</span><span class="st">&quot;binomial&quot;</span>)</span>
+<span id="cb6-12"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb6-12" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb6-13" tabindex="-1"></a><span class="co"># Summary of the GAM</span></span>
+<span id="cb6-14"><a href="sdm-with-glm-and-gam-covariates-maría-y-david.html#cb6-14" tabindex="-1"></a><span class="fu">summary</span>(gam_model)</span></code></pre></div>
+<pre><code>## 
+## Family: binomial 
+## Link function: logit 
+## 
+## Formula:
+## presence ~ s(env1) + s(env2)
+## 
+## Parametric coefficients:
+##             Estimate Std. Error z value Pr(&gt;|z|)
+## (Intercept)  -0.1241     0.2034   -0.61    0.542
+## 
+## Approximate significance of smooth terms:
+##         edf Ref.df Chi.sq p-value  
+## s(env1)   1      1  2.781  0.0954 .
+## s(env2)   1      1  0.108  0.7426  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## R-sq.(adj) =  0.00925   Deviance explained = 2.12%
+## UBRE = 0.41339  Scale est. = 1         n = 100</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bayesian-inference-integrated-nested-laplace-approximation-variational-bayes.-virgilio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="spatial-data-data-type-and-maps-virgilio.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/chapter03.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Species Distribution Models.pdf", "Species Distribution Models.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

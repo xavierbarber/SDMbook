@@ -1,0 +1,24 @@
+
+\pagebreak
+\setcounter{chapter}{13}
+\setcounter{section}{0}
+\renewcommand{\thepage}{\arabic{page}}
+
+
+# Multiple sources of information: dependent-independent data and more.  (Xavi y Antonio)
+
+Vale, este es el tema  que empezamos pre-pandemia y que ahora lo lleva Mario; pero bueno esperemos que publiquen ponto ese paper y así poder aporvechar ese material para hacer ese capítulo.
+
+##  Confluence of Data Streams - Harnessing Multiple Sources of Information in SDMs
+
+In the mosaic of species distribution modeling, data is the bedrock upon which insights are sculpted. But not all data sources are created equal, nor do they operate in isolation. From field surveys to remote sensing and citizen science contributions, each stream of data offers its unique vantage point, complete with intrinsic strengths and inherent biases. The true challenge, and opportunity, lies in weaving these disparate threads into a coherent, robust, and enlightening tapestry of understanding.
+
+This chapter, "Multiple Sources of Information (dependent-independent data and more)," embarks on the journey of dissecting, interpreting, and integrating varied data types within the realm of Species Distribution Models (SDMs). Recognizing the value of both dependent and independent datasets, as well as the intricacies that come with blending various sources, we will explore methodologies that celebrate this diversity of information.
+
+With the combined analytical might of R-INLA and INLABRU, we are uniquely positioned to handle such multi-faceted datasets. These platforms, with their flexibility and precision, serve as the nexus where different data types converge, are analyzed in tandem, and produce insights greater than the sum of their parts.
+
+Guided by rich examples, hands-on exercises, and deep theoretical insights, we'll traverse the nuances of data integration, from understanding potential correlation structures to addressing biases and scaling discrepancies. Emphasis will be placed on understanding the nature of each data type, ensuring that their integration is not just statistically sound but ecologically meaningful.
+
+As we wade through the confluence of data streams, the broader implications for conservation, species management, and ecological understanding will come to the fore. This chapter is not just an exploration of data but a testament to the enriched insights that arise when multiple voices of information sing in harmony.
+
+Dive in with us, as we navigate the intricate dance of data integration, harnessing the full spectrum of information to paint a richer, more nuanced picture of species distributions with the aid of R-INLA and INLABRU.

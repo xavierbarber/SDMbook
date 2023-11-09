@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Preferential Sampling in the context of SDM | Species-Distribution-Models</title>
+  <meta name="description" content="Modelling Species Distribution book CRCPress" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Preferential Sampling in the context of SDM | Species-Distribution-Models" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Modelling Species Distribution book CRCPress" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Preferential Sampling in the context of SDM | Species-Distribution-Models" />
+  
+  <meta name="twitter:description" content="Modelling Species Distribution book CRCPress" />
+  
+
+<meta name="author" content="Barber, Conesa, Lopez-Quilez, Martinez-Minaya, Paradinas, Pennino" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="spatial-areal-geostatistical-sdm.html"/>
+<link rel="next" href="excess-of-zeroes-in-the-context-of-sdm.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Species Distribution Models with R-INLA and INLABRU</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="species-distribution-models-a-recent-history.html"><a href="species-distribution-models-a-recent-history.html"><i class="fa fa-check"></i><b>1</b> Species Distribution Models: a recent history</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="species-distribution-models-a-recent-history.html"><a href="species-distribution-models-a-recent-history.html#the-unavoidable-globalization-of-knowledge"><i class="fa fa-check"></i><b>1.1</b> The Unavoidable Globalization of Knowledge</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="bayesian-inference.html"><a href="bayesian-inference.html"><i class="fa fa-check"></i><b>2</b> Bayesian Inference</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="bayesian-inference.html"><a href="bayesian-inference.html#introduction-navigating-the-bayesian-landscape"><i class="fa fa-check"></i><b>2.1</b> Introduction: Navigating the Bayesian Landscape</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sdm-with-glm-and-gam-covariates.html"><a href="sdm-with-glm-and-gam-covariates.html"><i class="fa fa-check"></i><b>3</b> SDM with GLM and GAM (covariates)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sdm-with-glm-and-gam-covariates.html"><a href="sdm-with-glm-and-gam-covariates.html#charting-the-ecological-landscape-with-glm-and-gam"><i class="fa fa-check"></i><b>3.1</b> Charting the Ecological Landscape with GLM and GAM</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="spatial-data-data-type-and-maps.html"><a href="spatial-data-data-type-and-maps.html"><i class="fa fa-check"></i><b>4</b> Spatial Data (data type and Maps)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="spatial-data-data-type-and-maps.html"><a href="spatial-data-data-type-and-maps.html#mapping-the-confluence-of-spatial-data-and-species-distributions"><i class="fa fa-check"></i><b>4.1</b> Mapping the Confluence of Spatial Data and Species Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="spatial-areal-geostatistical-sdm.html"><a href="spatial-areal-geostatistical-sdm.html"><i class="fa fa-check"></i><b>5</b> Spatial (areal &amp; geostatistical) SDM</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="spatial-areal-geostatistical-sdm.html"><a href="spatial-areal-geostatistical-sdm.html#navigating-the-spatial-landscape-in-species-distribution-models"><i class="fa fa-check"></i><b>5.1</b> Navigating the Spatial Landscape in Species Distribution Models</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="preferential-sampling-in-the-context-of-sdm.html"><a href="preferential-sampling-in-the-context-of-sdm.html"><i class="fa fa-check"></i><b>6</b> Preferential Sampling in the context of SDM</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="preferential-sampling-in-the-context-of-sdm.html"><a href="preferential-sampling-in-the-context-of-sdm.html#unraveling-the-intricacies-of-preferential-sampling-in-species-distribution-models"><i class="fa fa-check"></i><b>6.1</b> Unraveling the Intricacies of Preferential Sampling in Species Distribution Models</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="excess-of-zeroes-in-the-context-of-sdm.html"><a href="excess-of-zeroes-in-the-context-of-sdm.html"><i class="fa fa-check"></i><b>7</b> Excess of zeroes in the context of SDM</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="excess-of-zeroes-in-the-context-of-sdm.html"><a href="excess-of-zeroes-in-the-context-of-sdm.html#navigating-the-zeroes---challenges-and-opportunities-in-species-distribution-models"><i class="fa fa-check"></i><b>7.1</b> Navigating the Zeroes - Challenges and Opportunities in Species Distribution Models</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="barriers-and-non-stationarity-models.html"><a href="barriers-and-non-stationarity-models.html"><i class="fa fa-check"></i><b>8</b> Barriers and non-stationarity models</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="barriers-and-non-stationarity-models.html"><a href="barriers-and-non-stationarity-models.html#beyond-uniformity-embracing-barriers-and-non-stationarity-in-sdms"><i class="fa fa-check"></i><b>8.1</b> Beyond Uniformity – Embracing Barriers and Non-Stationarity in SDMs</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><div class="line-block">Modelling Species Distribution<br />
+with R-INLA (and INLABRU?)<br />
+<br />
+Inst. Mathematics, Data Science and Artificiail Intelligence<br />
+</div></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="preferential-sampling-in-the-context-of-sdm" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Preferential Sampling in the context of SDM<a href="preferential-sampling-in-the-context-of-sdm.html#preferential-sampling-in-the-context-of-sdm" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="unraveling-the-intricacies-of-preferential-sampling-in-species-distribution-models" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Unraveling the Intricacies of Preferential Sampling in Species Distribution Models<a href="preferential-sampling-in-the-context-of-sdm.html#unraveling-the-intricacies-of-preferential-sampling-in-species-distribution-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When it comes to modeling species distributions, one might assume that the data at hand is random and unbiased. However, this is often not the case. Many a time, the locations of sampled data are not independent of the underlying process we wish to study. This phenomenon, where sampling locations are influenced by the very process of interest, is termed ‘preferential sampling’. And in the world of Species Distribution Models (SDMs), it poses both challenges and opportunities.</p>
+<p>In this chapter, “Preferential Sampling in the context of SDM”, we will delve deep into the complexities arising from non-random sampling patterns and their implications for modeling species distributions using R-INLA. Acknowledging and addressing preferential sampling is crucial, as neglecting it can lead to biased inferences, potentially misguiding conservation efforts, policy decisions, or scientific understanding.</p>
+<p>But why R-INLA? The framework’s advanced capabilities for Bayesian inference, combined with its adeptness in handling intricate spatial structures, make it an invaluable tool for tackling the challenges posed by preferential sampling. Through R-INLA, we can incorporate the potential dependence between the sampling locations and the underlying spatial process, leading to more accurate and robust SDMs.</p>
+<p>Armed with real-world examples, hands-on coding exercises, and vivid visual illustrations, we aim to provide readers with a comprehensive understanding of preferential sampling and its nuances. By the end of this chapter, you will have gained both the theoretical knowledge and practical skills to recognize, assess, and account for preferential sampling in your species distribution modeling endeavors.</p>
+<p>So, let us embark on this journey to understand the subtle dance between where we sample and what we discover, ensuring that our SDMs truly reflect the intricate tapestry of life on Earth.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="spatial-areal-geostatistical-sdm.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="excess-of-zeroes-in-the-context-of-sdm.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/chapter6.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Species Distribution Models.pdf", "Species Distribution Models.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

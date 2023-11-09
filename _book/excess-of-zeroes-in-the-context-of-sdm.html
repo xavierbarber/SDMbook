@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Excess of zeroes in the context of SDM | Species-Distribution-Models</title>
+  <meta name="description" content="Modelling Species Distribution book CRCPress" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Excess of zeroes in the context of SDM | Species-Distribution-Models" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Modelling Species Distribution book CRCPress" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Excess of zeroes in the context of SDM | Species-Distribution-Models" />
+  
+  <meta name="twitter:description" content="Modelling Species Distribution book CRCPress" />
+  
+
+<meta name="author" content="Barber, Conesa, Lopez-Quilez, Martinez-Minaya, Paradinas, Pennino" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="preferential-sampling-in-the-context-of-sdm.html"/>
+<link rel="next" href="barriers-and-non-stationarity-models.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Species Distribution Models with R-INLA and INLABRU</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="species-distribution-models-a-recent-history.html"><a href="species-distribution-models-a-recent-history.html"><i class="fa fa-check"></i>Species Distribution Models: a recent history</a>
+<ul>
+<li class="chapter" data-level="" data-path="species-distribution-models-a-recent-history.html"><a href="species-distribution-models-a-recent-history.html#the-unavoidable-globalization-of-knowledge"><i class="fa fa-check"></i>The Unavoidable Globalization of Knowledge</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bayesian-inference.html"><a href="bayesian-inference.html"><i class="fa fa-check"></i>Bayesian Inference</a>
+<ul>
+<li class="chapter" data-level="" data-path="bayesian-inference.html"><a href="bayesian-inference.html#introduction-navigating-the-bayesian-landscape"><i class="fa fa-check"></i>Introduction: Navigating the Bayesian Landscape</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sdm-with-glm-and-gam-covariates.html"><a href="sdm-with-glm-and-gam-covariates.html"><i class="fa fa-check"></i>SDM with GLM and GAM (covariates)</a>
+<ul>
+<li class="chapter" data-level="" data-path="sdm-with-glm-and-gam-covariates.html"><a href="sdm-with-glm-and-gam-covariates.html#charting-the-ecological-landscape-with-glm-and-gam"><i class="fa fa-check"></i>Charting the Ecological Landscape with GLM and GAM</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="spatial-data-data-type-and-maps.html"><a href="spatial-data-data-type-and-maps.html"><i class="fa fa-check"></i>Spatial Data (data type and Maps)</a>
+<ul>
+<li class="chapter" data-level="" data-path="spatial-data-data-type-and-maps.html"><a href="spatial-data-data-type-and-maps.html#mapping-the-confluence-of-spatial-data-and-species-distributions"><i class="fa fa-check"></i>Mapping the Confluence of Spatial Data and Species Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="spatial-areal-geostatistical-sdm.html"><a href="spatial-areal-geostatistical-sdm.html"><i class="fa fa-check"></i>Spatial (areal &amp; geostatistical) SDM</a>
+<ul>
+<li class="chapter" data-level="" data-path="spatial-areal-geostatistical-sdm.html"><a href="spatial-areal-geostatistical-sdm.html#navigating-the-spatial-landscape-in-species-distribution-models"><i class="fa fa-check"></i>Navigating the Spatial Landscape in Species Distribution Models</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="preferential-sampling-in-the-context-of-sdm.html"><a href="preferential-sampling-in-the-context-of-sdm.html"><i class="fa fa-check"></i>Preferential Sampling in the context of SDM</a>
+<ul>
+<li class="chapter" data-level="" data-path="preferential-sampling-in-the-context-of-sdm.html"><a href="preferential-sampling-in-the-context-of-sdm.html#unraveling-the-intricacies-of-preferential-sampling-in-species-distribution-models"><i class="fa fa-check"></i>Unraveling the Intricacies of Preferential Sampling in Species Distribution Models</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="excess-of-zeroes-in-the-context-of-sdm.html"><a href="excess-of-zeroes-in-the-context-of-sdm.html"><i class="fa fa-check"></i><b>1</b> Excess of zeroes in the context of SDM</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="excess-of-zeroes-in-the-context-of-sdm.html"><a href="excess-of-zeroes-in-the-context-of-sdm.html#navigating-the-zeroes---challenges-and-opportunities-in-species-distribution-models"><i class="fa fa-check"></i><b>1.1</b> Navigating the Zeroes - Challenges and Opportunities in Species Distribution Models</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="barriers-and-non-stationarity-models.html"><a href="barriers-and-non-stationarity-models.html"><i class="fa fa-check"></i>Barriers and non-stationarity models</a>
+<ul>
+<li class="chapter" data-level="" data-path="barriers-and-non-stationarity-models.html"><a href="barriers-and-non-stationarity-models.html#beyond-uniformity-embracing-barriers-and-non-stationarity-in-sdms"><i class="fa fa-check"></i>Beyond Uniformity – Embracing Barriers and Non-Stationarity in SDMs</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><div class="line-block">Modelling Species Distribution<br />
+with R-INLA (and INLABRU?)<br />
+<br />
+Inst. Mathematics, Data Science and Artificiail Intelligence<br />
+</div></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="excess-of-zeroes-in-the-context-of-sdm" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Excess of zeroes in the context of SDM<a href="excess-of-zeroes-in-the-context-of-sdm.html#excess-of-zeroes-in-the-context-of-sdm" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="navigating-the-zeroes---challenges-and-opportunities-in-species-distribution-models" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Navigating the Zeroes - Challenges and Opportunities in Species Distribution Models<a href="excess-of-zeroes-in-the-context-of-sdm.html#navigating-the-zeroes---challenges-and-opportunities-in-species-distribution-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the intricate realm of Species Distribution Models (SDMs), data often speaks in whispers and shouts. Among the most vocal, yet perplexing aspects of this data, is the occurrence of zeroes. Far from being inconsequential, these zeroes – often representing absences or undetected presences – can dominate datasets and play a pivotal role in shaping our inferences about species distributions.</p>
+<p>“Excess of zeroes in the context of SDM” is not just a mathematical quirk but a biological and observational reality. It can arise due to various reasons: genuine absences, detection failures, or the patchy nature of many ecological phenomena. While zeroes can provide invaluable insights, an overabundance without proper handling can lead to misinterpreted models, undermining the reliability of predictions and conservation strategies derived from them.</p>
+<p>R-INLA, with its prowess in Bayesian modeling and its flexibility to incorporate complex data structures, emerges as a beacon in addressing this challenge. This chapter aims to elucidate the intricacies of datasets with an excess of zeroes and offers robust methodologies within the R-INLA framework to tackle them effectively.</p>
+<p>Through a blend of theory, real-world case studies, and hands-on R-INLA tutorials, we will explore various modeling approaches such as zero-inflated models and hurdle models. These techniques, tailored for datasets with a surfeit of zeroes, ensure that our SDMs are both statistically sound and ecologically meaningful.</p>
+<p>Join us in this deep dive into the world of zeroes, as we unravel their mysteries and harness their full potential in the quest to accurately model and understand the patterns of life on our planet.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="preferential-sampling-in-the-context-of-sdm.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="barriers-and-non-stationarity-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/chapter7.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Species Distribution Models.pdf", "Species Distribution Models.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

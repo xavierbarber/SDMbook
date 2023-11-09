@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Modelling Species Distribution with R-INLA Inst. Mathematics, Data Science and Artificiail Intelligence  | Species-Distribution-Models</title>
+  <meta name="description" content="Modelling Species Distribution book CRCPress" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Modelling Species Distribution with R-INLA Inst. Mathematics, Data Science and Artificiail Intelligence  | Species-Distribution-Models" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Modelling Species Distribution book CRCPress" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Modelling Species Distribution with R-INLA Inst. Mathematics, Data Science and Artificiail Intelligence  | Species-Distribution-Models" />
+  
+  <meta name="twitter:description" content="Modelling Species Distribution book CRCPress" />
+  
+
+<meta name="author" content="Barber, Conesa, Lopez-Quilez, Martinez-Minaya, Paradinas, Pennino" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Species Distribution Models with R-INLA and INLABRU</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path=""><a href="#species-distribution-models-and-the-unavoidable-globalization-of-knowledge"><i class="fa fa-check"></i>Species Distribution Models and the Unavoidable Globalization of Knowledge</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><div class="line-block">Modelling Species Distribution<br />
+with R-INLA<br />
+<br />
+Inst. Mathematics, Data Science and Artificiail Intelligence<br />
+</div></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title"><div class="line-block">Modelling Species Distribution<br />
+with R-INLA<br />
+<br />
+Inst. Mathematics, Data Science and Artificiail Intelligence<br />
+</div></h1>
+<p class="author"><em>Barber, Conesa, Lopez-Quilez, Martinez-Minaya, Paradinas, Pennino</em></p>
+</div>
+<div id="species-distribution-models-and-the-unavoidable-globalization-of-knowledge" class="section level1 unnumbered hasAnchor">
+<h1>Species Distribution Models and the Unavoidable Globalization of Knowledge<a href="#species-distribution-models-and-the-unavoidable-globalization-of-knowledge" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction" class="section level2 unnumbered hasAnchor">
+<h2>Introduction<a href="#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Biodiversity, that magical mosaic of life that unfolds before us at all scales and in every corner of the planet, has always been a subject of fascination and study. From the earliest naturalists who roamed forests and deserts, to the modern biologists using satellites and algorithms for their research, there has been an insatiable desire to understand how and why species distribute themselves in space and time.</p>
+<p>This is where the importance of Species Distribution Models (SDM) comes into play. These models aim not only to understand the current geographical distribution of species but also to predict how they might react and move in response to changes in the environment, such as climate change or habitat transformation due to human activities.</p>
+<p>The use of SDMs has increased over the past few decades due to the growing need to make informed decisions in areas like conservation, resource management, and territorial planning. The implications extend beyond the academic world; public policies, industries, and society at large benefit directly from the knowledge these models provide.</p>
+<p>So, if SDMs are such a powerful and necessary tool, why the insistence on communicating about them in English?</p>
+<p>The answer lies in the unavoidable globalization of knowledge. We live in a world where information flows faster than ever, and often, the lingua franca of science is English. By publishing and communicating findings in this language, a global reach is achieved, allowing scientists from all over the world to access, understand, critique, and build upon that foundation.</p>
+<p>However, this doesn’t diminish the value of disseminating in other languages. In fact, it’s essential to bring science closer to non-English speaking communities. But, to establish international and cooperative dialogue, the adoption of English becomes a crucial tool.</p>
+<p>In this book, we will not only delve into the theory and practice of SDMs but also address their global significance and how these models intertwine in an interconnected world. Thus, through the lens of English, we expand the boundaries of knowledge and strengthen international collaboration towards a common goal: understanding and preserving planetary biodiversity.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/chapter1.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Species Distribution Models.pdf", "Species Distribution Models.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

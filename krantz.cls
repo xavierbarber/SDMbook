@@ -1,0 +1,1 @@
+/Users/Xavi/Documents/MacBooster/Duplicates Backups/krantz.cls
